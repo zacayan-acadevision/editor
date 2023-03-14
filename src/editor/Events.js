@@ -47,7 +47,7 @@ class Events {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({})
         };
-        fetch('http://localhost:3000/api/list', requestOptions).then(response => response.json()).then(data => {
+        fetch('http://localhost:3333/api/list', requestOptions).then(response => response.json()).then(data => {
             document.querySelector('.filelist').innerHTML = ''
             data = data.reverse()
             data.forEach(filename => {
@@ -69,7 +69,7 @@ class Events {
                     data: persistence.database
                 })
             };
-            fetch('http://localhost:3000/api/save', requestOptions)
+            fetch('http://localhost:3333/api/save', requestOptions)
                 .then(response => response.json())
                 .then(data => {
                     if (data === true) {
