@@ -20,7 +20,7 @@ export const InitEditor = async () => {
     const nodeBuilder = new NodeBuilder(nodeHandler);
 
     const events = new Events(nodeHandler, nodeBuilder);
-    if (location.origin == 'http://127.0.0.1:5500') {
+    if (location.origin.slice(0,16) === 'http://127.0.0.1') {
         const promise = editor.start();
         promise.then(() => {
             events.start();
